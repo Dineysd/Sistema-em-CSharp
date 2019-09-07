@@ -9,7 +9,7 @@ namespace sistemadbs.DAL
     public class DataContexFactory
     {
         private static SistemaFormDataContext dataContext;
-        SistemaFormDataContext DataContext
+        public static SistemaFormDataContext DataContext
         {
             get
             {
