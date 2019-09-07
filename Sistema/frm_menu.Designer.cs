@@ -33,7 +33,7 @@
             this.produtosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.categoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_cad_produtos = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_cad_categorias = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,14 +60,16 @@
             // produtosToolStripMenuItem
             // 
             this.produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
-            this.produtosToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.produtosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.produtosToolStripMenuItem.Text = "Produtos";
+            this.produtosToolStripMenuItem.Click += new System.EventHandler(this.ProdutosToolStripMenuItem_Click);
             // 
             // categoriasToolStripMenuItem
             // 
             this.categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
-            this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.categoriasToolStripMenuItem.Text = "Categorias";
+            this.categoriasToolStripMenuItem.Click += new System.EventHandler(this.CategoriasToolStripMenuItem_Click);
             // 
             // btn_cad_produtos
             // 
@@ -89,27 +91,29 @@
             this.btn_cad_produtos.Text = "Cadastrar Produtos";
             this.btn_cad_produtos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_cad_produtos.UseVisualStyleBackColor = false;
+            this.btn_cad_produtos.Click += new System.EventHandler(this.Btn_cad_produtos_Click);
             // 
-            // button1
+            // btn_cad_categorias
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::Sistema.Properties.Resources.categoria_Detail1;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(136, 43);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(92, 90);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Cadastrar categorias";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_cad_categorias.BackColor = System.Drawing.Color.Transparent;
+            this.btn_cad_categorias.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_cad_categorias.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_cad_categorias.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_cad_categorias.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btn_cad_categorias.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btn_cad_categorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cad_categorias.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cad_categorias.ForeColor = System.Drawing.Color.White;
+            this.btn_cad_categorias.Image = global::Sistema.Properties.Resources.categoria_Detail1;
+            this.btn_cad_categorias.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_cad_categorias.Location = new System.Drawing.Point(136, 43);
+            this.btn_cad_categorias.Name = "btn_cad_categorias";
+            this.btn_cad_categorias.Size = new System.Drawing.Size(92, 90);
+            this.btn_cad_categorias.TabIndex = 3;
+            this.btn_cad_categorias.Text = "Cadastrar categorias";
+            this.btn_cad_categorias.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_cad_categorias.UseVisualStyleBackColor = false;
+            this.btn_cad_categorias.Click += new System.EventHandler(this.Btn_cad_categorias_Click);
             // 
             // frm_menu
             // 
@@ -118,7 +122,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImage = global::Sistema.Properties.Resources.fundo_sistema3;
             this.ClientSize = new System.Drawing.Size(574, 335);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_cad_categorias);
             this.Controls.Add(this.btn_cad_produtos);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -139,7 +143,7 @@
         private System.Windows.Forms.ToolStripMenuItem produtosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem categoriasToolStripMenuItem;
         private System.Windows.Forms.Button btn_cad_produtos;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_cad_categorias;
     }
 }
 

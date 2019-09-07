@@ -19,7 +19,32 @@ namespace Sistema
 
         private void Frm_menu_Load(object sender, EventArgs e)
         {
+            Btn_cad_produtos_Click(sender, e);
+            Btn_cad_categorias_Click(sender, e);
+        }
 
+        private void Btn_cad_produtos_Click(object sender, EventArgs e)
+        {
+            frm_produtos frm_prod = new frm_produtos();
+            frm_prod.Show();
+        }
+
+        private void Btn_cad_categorias_Click(object sender, EventArgs e)
+        {
+            frm_categorias frm_cat = new frm_categorias();
+            frm_cat.Show();
+        }
+
+        private void ProdutosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_produtos frm_prod = new frm_produtos();
+            frm_prod.Show();
+        }
+
+        private void CategoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_categorias frm_cat = new frm_categorias();
+            frm_cat.Show();
         }
     }
 }
