@@ -63,9 +63,9 @@ namespace Sistema.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cadastro_produtos_40_x_40 {
+        internal static System.Drawing.Bitmap imagem {
             get {
-                object obj = ResourceManager.GetObject("cadastro produtos 40 x 40", resourceCulture);
+                object obj = ResourceManager.GetObject("imagem", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace Sistema.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap categoria {
+        internal static System.Drawing.Bitmap imagem_system {
             get {
-                object obj = ResourceManager.GetObject("categoria", resourceCulture);
+                object obj = ResourceManager.GetObject("imagem_system", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,59 +83,9 @@ namespace Sistema.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap categoria_Detail {
+        internal static System.Drawing.Bitmap search20x20 {
             get {
-                object obj = ResourceManager.GetObject("categoria_Detail", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap categoria_Detail1 {
-            get {
-                object obj = ResourceManager.GetObject("categoria_Detail1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap fundo_sistema {
-            get {
-                object obj = ResourceManager.GetObject("fundo sistema", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap fundo_sistema1 {
-            get {
-                object obj = ResourceManager.GetObject("fundo sistema1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap fundo_sistema3 {
-            get {
-                object obj = ResourceManager.GetObject("fundo sistema3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap vendas {
-            get {
-                object obj = ResourceManager.GetObject("vendas", resourceCulture);
+                object obj = ResourceManager.GetObject("search20x20", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

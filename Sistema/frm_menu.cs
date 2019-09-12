@@ -46,5 +46,11 @@ namespace Sistema
             frm_categorias frm_cat = new frm_categorias();
             frm_cat.Show();
         }
+
+        private void ProdutoscategoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_ConsultaProdutos frm_cat = new frm_ConsultaProdutos();
+            frm_cat.Show();
+        }
     }
 }

@@ -71,6 +71,12 @@
     <Compile Include="frm_categorias.Designer.cs">
       <DependentUpon>frm_categorias.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_ConsultaProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ConsultaProdutos.Designer.cs">
+      <DependentUpon>frm_ConsultaProdutos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,9 @@
     <EmbeddedResource Include="frm_categorias.resx">
       <DependentUpon>frm_categorias.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_ConsultaProdutos.resx">
+      <DependentUpon>frm_ConsultaProdutos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_menu.resx">
       <DependentUpon>frm_menu.cs</DependentUpon>
     </EmbeddedResource>
@@ -96,20 +105,20 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\DataSources\sistemadbs.DAL.Categoria.datasource" />
     <None Include="Properties\DataSources\sistemadbs.DAL.Produto.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -118,33 +127,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\vendas3.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cadastro produtos 40 x 40.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\fundo sistema.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\fundo sistema1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\fundo sistema3.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\devolucao fornecedores 40x40.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\categoria.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\categoria_Detail.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\categoria_Detail1.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
@@ -160,7 +142,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Money Bag.ico" />
-    <None Include="Resources\vendas.png" />
+    <None Include="Resources\search20x20.png" />
+    <None Include="Resources\imagem_system.jpg" />
+    <None Include="Resources\imagem.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\sistemadbs.DAL\sistemadbs.DAL.csproj">
@@ -171,5 +155,6 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
