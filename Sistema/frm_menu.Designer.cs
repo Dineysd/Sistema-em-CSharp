@@ -111,9 +111,10 @@
             this.btn_cad_produtos.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.btn_cad_produtos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cad_produtos.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cad_produtos.ForeColor = System.Drawing.Color.White;
+            this.btn_cad_produtos.ForeColor = System.Drawing.Color.Transparent;
+            this.btn_cad_produtos.Image = global::Sistema.Properties.Resources.packager_add;
             this.btn_cad_produtos.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_cad_produtos.Location = new System.Drawing.Point(23, 43);
+            this.btn_cad_produtos.Location = new System.Drawing.Point(21, 43);
             this.btn_cad_produtos.Name = "btn_cad_produtos";
             this.btn_cad_produtos.Size = new System.Drawing.Size(90, 90);
             this.btn_cad_produtos.TabIndex = 2;
@@ -133,6 +134,7 @@
             this.btn_cad_categorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cad_categorias.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cad_categorias.ForeColor = System.Drawing.Color.White;
+            this.btn_cad_categorias.Image = global::Sistema.Properties.Resources.categoria_jornal;
             this.btn_cad_categorias.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_cad_categorias.Location = new System.Drawing.Point(136, 43);
             this.btn_cad_categorias.Name = "btn_cad_categorias";

@@ -63,6 +63,26 @@ namespace Sistema.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cad_produtos_40x40 {
+            get {
+                object obj = ResourceManager.GetObject("cad_produtos 40x40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap categoria_jornal {
+            get {
+                object obj = ResourceManager.GetObject("categoria_jornal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap imagem {
             get {
                 object obj = ResourceManager.GetObject("imagem", resourceCulture);
@@ -76,6 +96,26 @@ namespace Sistema.Properties {
         internal static System.Drawing.Bitmap imagem_system {
             get {
                 object obj = ResourceManager.GetObject("imagem_system", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Package_Add_icon {
+            get {
+                object obj = ResourceManager.GetObject("Package-Add-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap packager_add {
+            get {
+                object obj = ResourceManager.GetObject("packager_add", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

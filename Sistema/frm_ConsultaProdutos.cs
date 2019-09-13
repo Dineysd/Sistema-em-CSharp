@@ -30,9 +30,11 @@ namespace Sistema
 
         public void Pesquisar(int codigoCategoria)
         {
-            this.produtoBindingSource1.DataSource = DataContexFactory.DataContext.Produto
+            this.produtoBindingSource.DataSource = DataContexFactory.DataContext.Produto
                 .Where(x => x.codCategoria == codigoCategoria);
 
         }
+
+        
     }
 }
