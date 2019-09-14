@@ -13,17 +13,8 @@
       <Column Name="desc_produto" Member="descricao" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="valor" Type="System.Decimal" DbType="Decimal(25,2)" CanBeNull="true" />
       <Column Name="id_categoria" Member="codCategoria" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Produto_tb_itens_venda" Member="Itens_Venda" ThisKey="codigo" OtherKey="Codigo_produto" Type="Itens_Venda" />
       <Association Name="Categoria_Produto" Member="Categoria" ThisKey="codCategoria" OtherKey="codigo" Type="Categoria" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tb_itens_venda" Member="Itens_Venda">
-    <Type Name="Itens_Venda">
-      <Column Name="quantidade" Member="Quantidade" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="id_produto" Member="Codigo_produto_item" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="id_venda" Member="Codigo_venda_item" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="valor" Member="Valor_item" Storage="_valor" Type="System.Decimal" DbType="Decimal(15,2) NOT NULL" CanBeNull="false" />
-      <Column Name="id_item" Member="Codigo_item" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Association Name="Vendas_Itens_Venda" Member="Vendas" ThisKey="Codigo_venda_item" OtherKey="id_venda" Type="Vendas" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.tb_venda" Member="Vendas">
@@ -33,7 +24,7 @@
       <Column Name="desconto" Member="Desconto" Storage="_desconto" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
       <Column Name="valor_pago" Member="Valor_pago" Storage="_valor_pago" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
       <Column Name="id_pessoa" Member="Codigo_Pessoa_Venda" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Vendas_Itens_Venda" Member="Itens_Venda" ThisKey="id_venda" OtherKey="Codigo_venda_item" Type="Itens_Venda" />
+      <Association Name="Vendas_tb_itens_venda" Member="Itens_Venda" ThisKey="id_venda" OtherKey="Codigo_venda" Type="Itens_Venda" />
       <Association Name="Pessoas_Vendas" Member="Pessoas" ThisKey="Codigo_Pessoa_Venda" OtherKey="Codigo_pessoa" Type="Pessoas" IsForeignKey="true" />
     </Type>
   </Table>
@@ -51,6 +42,17 @@
       <Column Name="usuario" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="senha" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="id_pessoa" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_itens_venda" Member="Itens_Venda">
+    <Type Name="Itens_Venda">
+      <Column Name="quantidade" Member="Quantidade" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_produto" Member="Codigo_produto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_venda" Member="Codigo_venda" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="valor" Member="Valor" Type="System.Decimal" DbType="Decimal(15,2) NOT NULL" CanBeNull="false" />
+      <Column Name="id_item" Member="Codigo_item" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Association Name="Produto_tb_itens_venda" Member="Produto" ThisKey="Codigo_produto" OtherKey="codigo" Type="Produto" IsForeignKey="true" />
+      <Association Name="Vendas_tb_itens_venda" Member="Vendas" ThisKey="Codigo_venda" OtherKey="id_venda" Type="Vendas" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
