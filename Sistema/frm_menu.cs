@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin.Controls;
 
 namespace Sistema
 {
@@ -51,6 +52,12 @@ namespace Sistema
         {
             frm_ConsultaProdutos frm_cat = new frm_ConsultaProdutos();
             frm_cat.Show();
+        }
+
+        private void VendaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_venda frm_v = new frm_venda();
+            frm_v.Show();
         }
     }
 }

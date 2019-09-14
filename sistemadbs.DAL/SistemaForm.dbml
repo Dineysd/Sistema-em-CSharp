@@ -21,28 +21,36 @@
       <Column Name="quantidade" Member="Quantidade" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="id_produto" Member="Codigo_produto_item" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="id_venda" Member="Codigo_venda_item" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="valor" Type="System.Decimal" DbType="Decimal(15,2) NOT NULL" CanBeNull="false" />
+      <Column Name="valor" Member="Valor_item" Storage="_valor" Type="System.Decimal" DbType="Decimal(15,2) NOT NULL" CanBeNull="false" />
       <Column Name="id_item" Member="Codigo_item" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Association Name="tb_venda_tb_itens_venda" Member="Vendas" ThisKey="Codigo_venda_item" OtherKey="id_venda" Type="Vendas" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tb_usuario" Member="Usuarios">
-    <Type Name="Usuarios">
-      <Column Name="usuario" Member="Usuario" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="senha" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="id_pessoa" Member="Codigo_Pessoa_Usuario" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Association Name="tb_usuario_tb_venda" Member="Vendas" ThisKey="Codigo_Pessoa_Usuario" OtherKey="Codigo_Pessoa_Venda" Type="Vendas" />
+      <Association Name="Vendas_Itens_Venda" Member="Vendas" ThisKey="Codigo_venda_item" OtherKey="id_venda" Type="Vendas" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.tb_venda" Member="Vendas">
     <Type Name="Vendas">
       <Column Name="id_venda" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="valor" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
-      <Column Name="desconto" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
-      <Column Name="valor_pago" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="valor" Member="Valor_venda" Storage="_valor" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="desconto" Member="Desconto" Storage="_desconto" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="valor_pago" Member="Valor_pago" Storage="_valor_pago" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
       <Column Name="id_pessoa" Member="Codigo_Pessoa_Venda" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="tb_venda_tb_itens_venda" Member="Itens_Venda" ThisKey="id_venda" OtherKey="Codigo_venda_item" Type="Itens_Venda" />
-      <Association Name="tb_usuario_tb_venda" Member="Usuarios" ThisKey="Codigo_Pessoa_Venda" OtherKey="Codigo_Pessoa_Usuario" Type="Usuarios" IsForeignKey="true" />
+      <Association Name="Vendas_Itens_Venda" Member="Itens_Venda" ThisKey="id_venda" OtherKey="Codigo_venda_item" Type="Itens_Venda" />
+      <Association Name="Pessoas_Vendas" Member="Pessoas" ThisKey="Codigo_Pessoa_Venda" OtherKey="Codigo_pessoa" Type="Pessoas" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_pessoa" Member="Pessoas">
+    <Type Name="Pessoas">
+      <Column Name="id_pessoa" Member="Codigo_pessoa" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nome" Member="Nome" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="telefone" Member="Telefone" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="email" Member="Email" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Association Name="Pessoas_Vendas" Member="Vendas" ThisKey="Codigo_pessoa" OtherKey="Codigo_Pessoa_Venda" Type="Vendas" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_usuario" Member="Usuarios">
+    <Type Name="Usuarios">
+      <Column Name="usuario" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="senha" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="id_pessoa" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

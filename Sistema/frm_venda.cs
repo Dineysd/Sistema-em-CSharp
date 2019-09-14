@@ -16,5 +16,10 @@ namespace Sistema
         {
             InitializeComponent();
         }
+
+        private void Frm_venda_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -35,6 +35,8 @@
             this.categoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.produtoscategoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_cad_produtos = new System.Windows.Forms.Button();
             this.btn_cad_categorias = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
@@ -45,7 +47,8 @@
             this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastroToolStripMenuItem,
-            this.consultasToolStripMenuItem});
+            this.consultasToolStripMenuItem,
+            this.vendasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(563, 24);
@@ -58,9 +61,10 @@
             this.cadastroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.produtosToolStripMenuItem,
             this.categoriasToolStripMenuItem});
-            this.cadastroToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.cadastroToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.cadastroToolStripMenuItem.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.cadastroToolStripMenuItem.Text = "Cadastro";
             // 
             // produtosToolStripMenuItem
@@ -68,7 +72,7 @@
             this.produtosToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.produtosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
-            this.produtosToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.produtosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.produtosToolStripMenuItem.Text = "Produtos";
             this.produtosToolStripMenuItem.Click += new System.EventHandler(this.ProdutosToolStripMenuItem_Click);
             // 
@@ -77,7 +81,7 @@
             this.categoriasToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.categoriasToolStripMenuItem.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
-            this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.categoriasToolStripMenuItem.Text = "Categorias";
             this.categoriasToolStripMenuItem.Click += new System.EventHandler(this.CategoriasToolStripMenuItem_Click);
             // 
@@ -86,7 +90,8 @@
             this.consultasToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.produtoscategoriasToolStripMenuItem});
-            this.consultasToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.consultasToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.consultasToolStripMenuItem.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.consultasToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black;
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
@@ -95,23 +100,43 @@
             // produtoscategoriasToolStripMenuItem
             // 
             this.produtoscategoriasToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.produtoscategoriasToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.produtoscategoriasToolStripMenuItem.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.produtoscategoriasToolStripMenuItem.Name = "produtoscategoriasToolStripMenuItem";
-            this.produtoscategoriasToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.produtoscategoriasToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.produtoscategoriasToolStripMenuItem.Text = "produtos/categorias";
             this.produtoscategoriasToolStripMenuItem.Click += new System.EventHandler(this.ProdutoscategoriasToolStripMenuItem_Click);
+            // 
+            // vendasToolStripMenuItem
+            // 
+            this.vendasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.vendaToolStripMenuItem});
+            this.vendasToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.vendasToolStripMenuItem.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.vendasToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black;
+            this.vendasToolStripMenuItem.Name = "vendasToolStripMenuItem";
+            this.vendasToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.vendasToolStripMenuItem.Text = "Vendas";
+            // 
+            // vendaToolStripMenuItem
+            // 
+            this.vendaToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.vendaToolStripMenuItem.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.vendaToolStripMenuItem.Name = "vendaToolStripMenuItem";
+            this.vendaToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.vendaToolStripMenuItem.Text = "Venda";
+            this.vendaToolStripMenuItem.Click += new System.EventHandler(this.VendaToolStripMenuItem_Click);
             // 
             // btn_cad_produtos
             // 
             this.btn_cad_produtos.BackColor = System.Drawing.Color.Transparent;
             this.btn_cad_produtos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_cad_produtos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_cad_produtos.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btn_cad_produtos.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_cad_produtos.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btn_cad_produtos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btn_cad_produtos.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.btn_cad_produtos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cad_produtos.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cad_produtos.ForeColor = System.Drawing.Color.Transparent;
+            this.btn_cad_produtos.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cad_produtos.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.btn_cad_produtos.Image = global::Sistema.Properties.Resources.packager_add;
             this.btn_cad_produtos.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_cad_produtos.Location = new System.Drawing.Point(21, 43);
@@ -128,12 +153,12 @@
             this.btn_cad_categorias.BackColor = System.Drawing.Color.Transparent;
             this.btn_cad_categorias.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_cad_categorias.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_cad_categorias.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_cad_categorias.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.btn_cad_categorias.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_cad_categorias.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.btn_cad_categorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cad_categorias.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cad_categorias.ForeColor = System.Drawing.Color.White;
+            this.btn_cad_categorias.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cad_categorias.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.btn_cad_categorias.Image = global::Sistema.Properties.Resources.categoria_jornal;
             this.btn_cad_categorias.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_cad_categorias.Location = new System.Drawing.Point(136, 43);
@@ -155,6 +180,7 @@
             this.Controls.Add(this.btn_cad_categorias);
             this.Controls.Add(this.btn_cad_produtos);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frm_menu";
@@ -177,6 +203,8 @@
         private System.Windows.Forms.Button btn_cad_categorias;
         private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem produtoscategoriasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vendasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vendaToolStripMenuItem;
     }
 }
 

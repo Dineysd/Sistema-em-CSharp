@@ -35,10 +35,10 @@
             this.comboBox_categoria_consulta = new System.Windows.Forms.ComboBox();
             this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.produtoDataGridView = new System.Windows.Forms.DataGridView();
-            this.produtoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.produtoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtoDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource)).BeginInit();
@@ -52,7 +52,7 @@
             this.btn_buscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn_buscar.ForeColor = System.Drawing.Color.Transparent;
             this.btn_buscar.Image = global::Sistema.Properties.Resources.search20x20;
-            this.btn_buscar.Location = new System.Drawing.Point(336, 12);
+            this.btn_buscar.Location = new System.Drawing.Point(383, 9);
             this.btn_buscar.Name = "btn_buscar";
             this.btn_buscar.Size = new System.Drawing.Size(26, 25);
             this.btn_buscar.TabIndex = 2;
@@ -63,19 +63,21 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(59, 18);
+            this.label1.Location = new System.Drawing.Point(54, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.Size = new System.Drawing.Size(62, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "Pesquisar";
             // 
             // comboBox_categoria_consulta
             // 
+            this.comboBox_categoria_consulta.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.comboBox_categoria_consulta.DataSource = this.categoriaBindingSource;
             this.comboBox_categoria_consulta.DisplayMember = "descricao";
             this.comboBox_categoria_consulta.FormattingEnabled = true;
-            this.comboBox_categoria_consulta.Location = new System.Drawing.Point(118, 15);
+            this.comboBox_categoria_consulta.Location = new System.Drawing.Point(143, 12);
             this.comboBox_categoria_consulta.Name = "comboBox_categoria_consulta";
             this.comboBox_categoria_consulta.Size = new System.Drawing.Size(212, 21);
             this.comboBox_categoria_consulta.TabIndex = 5;
@@ -86,21 +88,19 @@
             this.produtoDataGridView.AllowUserToAddRows = false;
             this.produtoDataGridView.AllowUserToDeleteRows = false;
             this.produtoDataGridView.AutoGenerateColumns = false;
+            this.produtoDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.produtoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.produtoDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codigoDataGridViewTextBoxColumn,
             this.descricaoDataGridViewTextBoxColumn,
             this.valorDataGridViewTextBoxColumn});
             this.produtoDataGridView.DataSource = this.produtoBindingSource;
+            this.produtoDataGridView.GridColor = System.Drawing.Color.Gray;
             this.produtoDataGridView.Location = new System.Drawing.Point(12, 53);
             this.produtoDataGridView.Name = "produtoDataGridView";
             this.produtoDataGridView.ReadOnly = true;
-            this.produtoDataGridView.Size = new System.Drawing.Size(462, 243);
+            this.produtoDataGridView.Size = new System.Drawing.Size(470, 232);
             this.produtoDataGridView.TabIndex = 5;
-            // 
-            // produtoBindingSource
-            // 
-            this.produtoBindingSource.DataSource = typeof(sistemadbs.DAL.Produto);
             // 
             // codigoDataGridViewTextBoxColumn
             // 
@@ -125,12 +125,16 @@
             this.valorDataGridViewTextBoxColumn.ReadOnly = true;
             this.valorDataGridViewTextBoxColumn.Width = 130;
             // 
+            // produtoBindingSource
+            // 
+            this.produtoBindingSource.DataSource = typeof(sistemadbs.DAL.Produto);
+            // 
             // frm_ConsultaProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Sistema.Properties.Resources.imagem_system;
-            this.ClientSize = new System.Drawing.Size(477, 323);
+            this.ClientSize = new System.Drawing.Size(499, 308);
             this.Controls.Add(this.produtoDataGridView);
             this.Controls.Add(this.comboBox_categoria_consulta);
             this.Controls.Add(this.label1);
