@@ -122,9 +122,11 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\sistemadbs.DAL.Categoria.datasource" />
+    <None Include="Properties\DataSources\sistemadbs.DAL.Contas_Receber.datasource" />
     <None Include="Properties\DataSources\sistemadbs.DAL.Itens_Venda.datasource" />
     <None Include="Properties\DataSources\sistemadbs.DAL.Pessoas.datasource" />
     <None Include="Properties\DataSources\sistemadbs.DAL.Produto.datasource" />
+    <None Include="Properties\DataSources\sistemadbs.DAL.Status_Pagamento.datasource" />
     <None Include="Properties\DataSources\sistemadbs.DAL.Usuario.datasource" />
     <None Include="Properties\DataSources\sistemadbs.DAL.Usuarios.datasource" />
     <None Include="Properties\DataSources\sistemadbs.DAL.Vendas.datasource" />
