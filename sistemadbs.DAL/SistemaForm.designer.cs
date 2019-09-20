@@ -42,9 +42,6 @@ namespace sistemadbs.DAL
     partial void InsertPessoas(Pessoas instance);
     partial void UpdatePessoas(Pessoas instance);
     partial void DeletePessoas(Pessoas instance);
-    partial void InsertUsuarios(Usuarios instance);
-    partial void UpdateUsuarios(Usuarios instance);
-    partial void DeleteUsuarios(Usuarios instance);
     partial void InsertItens_Venda(Itens_Venda instance);
     partial void UpdateItens_Venda(Itens_Venda instance);
     partial void DeleteItens_Venda(Itens_Venda instance);
@@ -54,6 +51,9 @@ namespace sistemadbs.DAL
     partial void InsertContas_Receber(Contas_Receber instance);
     partial void UpdateContas_Receber(Contas_Receber instance);
     partial void DeleteContas_Receber(Contas_Receber instance);
+    partial void InsertUsuarios(Usuarios instance);
+    partial void UpdateUsuarios(Usuarios instance);
+    partial void DeleteUsuarios(Usuarios instance);
     #endregion
 		
 		public SistemaFormDataContext() : 
@@ -118,14 +118,6 @@ namespace sistemadbs.DAL
 			}
 		}
 		
-		public System.Data.Linq.Table<Usuarios> Usuarios
-		{
-			get
-			{
-				return this.GetTable<Usuarios>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Itens_Venda> Itens_Venda
 		{
 			get
@@ -147,6 +139,14 @@ namespace sistemadbs.DAL
 			get
 			{
 				return this.GetTable<Contas_Receber>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Usuarios> Usuarios
+		{
+			get
+			{
+				return this.GetTable<Usuarios>();
 			}
 		}
 	}
@@ -623,7 +623,7 @@ namespace sistemadbs.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Vendas_tb_contas_receber", Storage="_Contas_Receber", ThisKey="id_venda", OtherKey="Codigo_venda")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Vendas_Contas_Receber", Storage="_Contas_Receber", ThisKey="id_venda", OtherKey="Codigo_venda")]
 		public EntitySet<Contas_Receber> Contas_Receber
 		{
 			get
@@ -731,6 +731,8 @@ namespace sistemadbs.DAL
 		
 		private EntitySet<Vendas> _Vendas;
 		
+		private EntityRef<Usuarios> _Usuarios;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -748,6 +750,7 @@ namespace sistemadbs.DAL
 		public Pessoas()
 		{
 			this._Vendas = new EntitySet<Vendas>(new Action<Vendas>(this.attach_Vendas), new Action<Vendas>(this.detach_Vendas));
+			this._Usuarios = default(EntityRef<Usuarios>);
 			OnCreated();
 		}
 		
@@ -844,6 +847,35 @@ namespace sistemadbs.DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Pessoas_tb_usuario", Storage="_Usuarios", ThisKey="Codigo_pessoa", OtherKey="codigo_pessoa", IsUnique=true, IsForeignKey=false)]
+		public Usuarios Usuarios
+		{
+			get
+			{
+				return this._Usuarios.Entity;
+			}
+			set
+			{
+				Usuarios previousValue = this._Usuarios.Entity;
+				if (((previousValue != value) 
+							|| (this._Usuarios.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Usuarios.Entity = null;
+						previousValue.Pessoas = null;
+					}
+					this._Usuarios.Entity = value;
+					if ((value != null))
+					{
+						value.Pessoas = this;
+					}
+					this.SendPropertyChanged("Usuarios");
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -874,116 +906,6 @@ namespace sistemadbs.DAL
 		{
 			this.SendPropertyChanging();
 			entity.Pessoas = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tb_usuario")]
-	public partial class Usuarios : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _usuario;
-		
-		private string _senha;
-		
-		private int _id_pessoa;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnusuarioChanging(string value);
-    partial void OnusuarioChanged();
-    partial void OnsenhaChanging(string value);
-    partial void OnsenhaChanged();
-    partial void Onid_pessoaChanging(int value);
-    partial void Onid_pessoaChanged();
-    #endregion
-		
-		public Usuarios()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usuario", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string usuario
-		{
-			get
-			{
-				return this._usuario;
-			}
-			set
-			{
-				if ((this._usuario != value))
-				{
-					this.OnusuarioChanging(value);
-					this.SendPropertyChanging();
-					this._usuario = value;
-					this.SendPropertyChanged("usuario");
-					this.OnusuarioChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_senha", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string senha
-		{
-			get
-			{
-				return this._senha;
-			}
-			set
-			{
-				if ((this._senha != value))
-				{
-					this.OnsenhaChanging(value);
-					this.SendPropertyChanging();
-					this._senha = value;
-					this.SendPropertyChanged("senha");
-					this.OnsenhaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_pessoa", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int id_pessoa
-		{
-			get
-			{
-				return this._id_pessoa;
-			}
-			set
-			{
-				if ((this._id_pessoa != value))
-				{
-					this.Onid_pessoaChanging(value);
-					this.SendPropertyChanging();
-					this._id_pessoa = value;
-					this.SendPropertyChanged("id_pessoa");
-					this.Onid_pessoaChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 	
@@ -1287,7 +1209,7 @@ namespace sistemadbs.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tb_status_pagamento_tb_contas_receber", Storage="_Contas_Receber", ThisKey="id_status", OtherKey="Codigo_status")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Status_Pagamento_Contas_Receber", Storage="_Contas_Receber", ThisKey="id_status", OtherKey="Codigo_status")]
 		public EntitySet<Contas_Receber> Contas_Receber
 		{
 			get
@@ -1500,7 +1422,7 @@ namespace sistemadbs.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tb_status_pagamento_tb_contas_receber", Storage="_Status_Pagamento", ThisKey="Codigo_status", OtherKey="id_status", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Status_Pagamento_Contas_Receber", Storage="_Status_Pagamento", ThisKey="Codigo_status", OtherKey="id_status", IsForeignKey=true)]
 		public Status_Pagamento Status_Pagamento
 		{
 			get
@@ -1534,7 +1456,7 @@ namespace sistemadbs.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Vendas_tb_contas_receber", Storage="_Vendas", ThisKey="Codigo_venda", OtherKey="id_venda", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Vendas_Contas_Receber", Storage="_Vendas", ThisKey="Codigo_venda", OtherKey="id_venda", IsForeignKey=true)]
 		public Vendas Vendas
 		{
 			get
@@ -1564,6 +1486,153 @@ namespace sistemadbs.DAL
 						this._Codigo_venda = default(int);
 					}
 					this.SendPropertyChanged("Vendas");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tb_usuario")]
+	public partial class Usuarios : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _Usuario;
+		
+		private string _Senha;
+		
+		private int _codigo_pessoa;
+		
+		private EntityRef<Pessoas> _Pessoas;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnUsuarioChanging(string value);
+    partial void OnUsuarioChanged();
+    partial void OnSenhaChanging(string value);
+    partial void OnSenhaChanged();
+    partial void Oncodigo_pessoaChanging(int value);
+    partial void Oncodigo_pessoaChanged();
+    #endregion
+		
+		public Usuarios()
+		{
+			this._Pessoas = default(EntityRef<Pessoas>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="usuario", Storage="_Usuario", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Usuario
+		{
+			get
+			{
+				return this._Usuario;
+			}
+			set
+			{
+				if ((this._Usuario != value))
+				{
+					this.OnUsuarioChanging(value);
+					this.SendPropertyChanging();
+					this._Usuario = value;
+					this.SendPropertyChanged("Usuario");
+					this.OnUsuarioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="senha", Storage="_Senha", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Senha
+		{
+			get
+			{
+				return this._Senha;
+			}
+			set
+			{
+				if ((this._Senha != value))
+				{
+					this.OnSenhaChanging(value);
+					this.SendPropertyChanging();
+					this._Senha = value;
+					this.SendPropertyChanged("Senha");
+					this.OnSenhaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="id_pessoa", Storage="_codigo_pessoa", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int codigo_pessoa
+		{
+			get
+			{
+				return this._codigo_pessoa;
+			}
+			set
+			{
+				if ((this._codigo_pessoa != value))
+				{
+					this.Oncodigo_pessoaChanging(value);
+					this.SendPropertyChanging();
+					this._codigo_pessoa = value;
+					this.SendPropertyChanged("codigo_pessoa");
+					this.Oncodigo_pessoaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Pessoas_tb_usuario", Storage="_Pessoas", ThisKey="codigo_pessoa", OtherKey="Codigo_pessoa", IsForeignKey=true)]
+		public Pessoas Pessoas
+		{
+			get
+			{
+				return this._Pessoas.Entity;
+			}
+			set
+			{
+				Pessoas previousValue = this._Pessoas.Entity;
+				if (((previousValue != value) 
+							|| (this._Pessoas.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Pessoas.Entity = null;
+						previousValue.Usuarios = null;
+					}
+					this._Pessoas.Entity = value;
+					if ((value != null))
+					{
+						value.Usuarios = this;
+						this._codigo_pessoa = value.Codigo_pessoa;
+					}
+					else
+					{
+						this._codigo_pessoa = default(int);
+					}
+					this.SendPropertyChanged("Pessoas");
 				}
 			}
 		}

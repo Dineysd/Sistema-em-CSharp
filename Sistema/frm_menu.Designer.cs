@@ -39,6 +39,8 @@
             this.vendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_cad_produtos = new System.Windows.Forms.Button();
             this.btn_cad_categorias = new System.Windows.Forms.Button();
+            this.relatoriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.produtosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +50,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastroToolStripMenuItem,
             this.consultasToolStripMenuItem,
-            this.vendasToolStripMenuItem});
+            this.vendasToolStripMenuItem,
+            this.relatoriosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(563, 24);
@@ -72,7 +75,7 @@
             this.produtosToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.produtosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
-            this.produtosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.produtosToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.produtosToolStripMenuItem.Text = "Produtos";
             this.produtosToolStripMenuItem.Click += new System.EventHandler(this.ProdutosToolStripMenuItem_Click);
             // 
@@ -81,7 +84,7 @@
             this.categoriasToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.categoriasToolStripMenuItem.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
-            this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.categoriasToolStripMenuItem.Text = "Categorias";
             this.categoriasToolStripMenuItem.Click += new System.EventHandler(this.CategoriasToolStripMenuItem_Click);
             // 
@@ -122,7 +125,7 @@
             this.vendaToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.vendaToolStripMenuItem.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.vendaToolStripMenuItem.Name = "vendaToolStripMenuItem";
-            this.vendaToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.vendaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.vendaToolStripMenuItem.Text = "Venda";
             this.vendaToolStripMenuItem.Click += new System.EventHandler(this.VendaToolStripMenuItem_Click);
             // 
@@ -170,6 +173,24 @@
             this.btn_cad_categorias.UseVisualStyleBackColor = false;
             this.btn_cad_categorias.Click += new System.EventHandler(this.Btn_cad_categorias_Click);
             // 
+            // relatoriosToolStripMenuItem
+            // 
+            this.relatoriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.produtosToolStripMenuItem1});
+            this.relatoriosToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.relatoriosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.relatoriosToolStripMenuItem.Name = "relatoriosToolStripMenuItem";
+            this.relatoriosToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
+            this.relatoriosToolStripMenuItem.Text = "Relatórios";
+            // 
+            // produtosToolStripMenuItem1
+            // 
+            this.produtosToolStripMenuItem1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.produtosToolStripMenuItem1.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.produtosToolStripMenuItem1.Name = "produtosToolStripMenuItem1";
+            this.produtosToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.produtosToolStripMenuItem1.Text = "Produtos";
+            // 
             // frm_menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -205,6 +226,8 @@
         private System.Windows.Forms.ToolStripMenuItem produtoscategoriasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vendasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vendaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem relatoriosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem produtosToolStripMenuItem1;
     }
 }
 

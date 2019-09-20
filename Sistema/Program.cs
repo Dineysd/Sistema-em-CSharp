@@ -16,7 +16,14 @@ namespace Sistema
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_menu());
+
+            frm_Login frm = new frm_Login();
+            frm.ShowDialog();
+
+            if (frm.logar)
+            {
+                Application.Run(new frm_menu());
+            }
         }
     }
 }
