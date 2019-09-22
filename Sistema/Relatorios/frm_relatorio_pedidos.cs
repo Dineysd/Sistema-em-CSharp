@@ -16,5 +16,13 @@ namespace Sistema.Relatorios
         {
             InitializeComponent();
         }
+
+        private void Frm_relatorio_pedidos_Load(object sender, EventArgs e)
+        {
+            // TODO: esta linha de código carrega dados na tabela 'dataSet1.tb_produto'. Você pode movê-la ou removê-la conforme necessário.
+            this.tb_produtoTableAdapter.Fill(this.dataSet1.tb_produto);
+
+            this.reportViewer1.RefreshReport();
+        }
     }
 }

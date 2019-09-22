@@ -59,5 +59,44 @@ namespace Sistema
             frm_venda frm_v = new frm_venda();
             frm_v.Show();
         }
+
+        private void ProdutosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Relatorios.frm_relatorio_pedidos frm_v = new Relatorios.frm_relatorio_pedidos();
+            frm_v.Show();
+        }
+
+        private void SairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void Btn_usuarios_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_consulta_produtos_Click(object sender, EventArgs e)
+        {
+            frm_ConsultaProdutos frm_cat = new frm_ConsultaProdutos();
+            frm_cat.Show();
+        }
+
+        private void Btn_relatorio_produto_Click(object sender, EventArgs e)
+        {
+            Relatorios.frm_relatorio_pedidos frm_v = new Relatorios.frm_relatorio_pedidos();
+            frm_v.Show();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            frm_venda frm_v = new frm_venda();
+            frm_v.Show();
+        }
+
+        private void Btn_sair_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }
